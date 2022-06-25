@@ -1,0 +1,17 @@
+{
+  "name": "08.-more-expressjs-with-dynamic-and-static-contents",
+  "version": "1.0.0",
+  "description": "Diving deep to ExpressJS with dynamic and static contents",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "Rodel Rey Gamosa",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.18"
+  }
+}
