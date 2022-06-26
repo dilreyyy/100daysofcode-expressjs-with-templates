@@ -10,28 +10,38 @@ const uuid = require('uuid');
 
 const app = express();
 
-app.set('views', path.join(__dirname, 'views')); //for ejs templates
+//for ejs templates
+app.set('views', path.join(__dirname, 'views')); 
 app.set('view engine', 'ejs');
 
-app.use(express.urlencoded({extended: false})); //to use req.body
+//to use req.body
+app.use(express.urlencoded({extended: false})); 
 
-app.use(express.static('public'));//to use css js requests
+//to use css js requests
+app.use(express.static('public'));
 
-app.get('/', function(req, res){//index route
+//index route
+app.get('/', function(req, res){
     res.render('index');
 });
 
-app.get('/about', function(req, res){//about route
+//about route
+app.get('/about', function(req, res){
     res.render('about');
 });
-app.get('/confirm', function(req, res){//confirm route
+
+//confirm route
+app.get('/confirm', function(req, res){
     res.render('confirm');
 });
-app.get('/recommend', function(req, res){//recommend route
+
+//recommend route
+app.get('/recommend', function(req, res){
     res.render('recommend');
 });
 
-app.post('/recommend', function(req, res){//handle post request from recommend form data
+//handle post request from recommend form data
+app.post('/recommend', function(req, res){
     const restaurants = req.body;
     restaurants.id = uuid.v4();
     const filePath = path.join(__dirname, 'data', 'restaurants.json');
@@ -44,7 +54,8 @@ app.post('/recommend', function(req, res){//handle post request from recommend f
     res.redirect('/confirm');
 });
 
-app.get('/restaurants', function(req, res){//restaurant route, display dyanmic data from json file
+//restaurant route, display dyanmic data from json file
+app.get('/restaurants', function(req, res){
 
     const filePath = path.join(__dirname, 'data', 'restaurants.json');
     const fileData = fs.readFileSync(filePath);
@@ -53,7 +64,8 @@ app.get('/restaurants', function(req, res){//restaurant route, display dyanmic d
     res.render('restaurants', { numOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants});
 });
 
-app.get('/restaurants/:rid', function(req, res){//display resto details with using dynamic id
+//display resto details with using dynamic id
+app.get('/restaurants/:rid', function(req, res){
     const restoID = req.params.rid;
 
     const filePath = path.join(__dirname, 'data', 'restaurants.json');
@@ -66,7 +78,12 @@ app.get('/restaurants/:rid', function(req, res){//display resto details with usi
         }
     }
 
-    
+    res.render('404');
+});
+
+// handle all not found links
+app.use((req, res)=>{ 
+    res.render('404');
 });
 
 app.listen(3000);
