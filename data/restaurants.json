@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Jollibee",
+    "address": "Bisag asa ra gud street, 6000",
+    "cuisine": "Filipino",
+    "website": "https://jabee.com",
+    "description": "This is so good resto!"
+  },
+  {
+    "name": "McDonalds",
+    "address": "US street of colon, 6000",
+    "cuisine": "Murican",
+    "website": "https://mcdo.com",
+    "description": "Nah it's lame braww."
+  }
+]
