@@ -79,16 +79,16 @@ app.get('/restaurants/:rid', function(req, res){
         }
     }
 
-    res.render('404');
+    res.status(404).render('404');
 });
 
 // handle all not found links
 app.use((req, res)=>{ 
-    res.render('404');
+    res.status(404).render('404');
 });
 
 // handle all server side errors
 app.use((error, req, res, next) => {
-    res.render('500');
+    res.status(500).render('500');
 })
 app.listen(3000);
