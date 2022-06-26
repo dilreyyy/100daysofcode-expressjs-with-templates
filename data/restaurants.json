@@ -1,1 +1,37 @@
-[{"name":"Jollibee","address":"Bisag asa ra gud street, 6000","cuisine":"Filipino","website":"https://jabee.com","description":"This is so good resto!"},{"name":"McDonalds","address":"US street of colon, 6000","cuisine":"Murican","website":"https://mcdo.com","description":"Nah it's lame braww."},{"name":"Mang inasar","address":"SM seaside, Cebu City","cuisine":"Filipinoy","website":"https://manginsara.com","description":"Lami kaayo ilang chicken oil nga way lasa."},{"name":"McJoy","address":"IT Park, Center Bloc","cuisine":"Bisayan","website":"https://mcjoy.com","description":"Lami ingon si mama."},{"name":"Sachi","address":"SM seaside, Cebu City","cuisine":"Japanese","website":"https://sachi.com","description":"Yes ofcourse, lami but mahal."}]
+[
+  {
+    "name": "Jollibee",
+    "address": "Bisag asa ra gud street, 6000",
+    "cuisine": "Filipino",
+    "website": "https://jabee.com",
+    "description": "This is so good resto!"
+  },
+  {
+    "name": "McDonalds",
+    "address": "US street of colon, 6000",
+    "cuisine": "Murican",
+    "website": "https://mcdo.com",
+    "description": "Nah it's lame braww."
+  },
+  {
+    "name": "Mang inasar",
+    "address": "SM seaside, Cebu City",
+    "cuisine": "Filipinoy",
+    "website": "https://manginsara.com",
+    "description": "Lami kaayo ilang chicken oil nga way lasa."
+  },
+  {
+    "name": "McJoy",
+    "address": "IT Park, Center Bloc",
+    "cuisine": "Bisayan",
+    "website": "https://mcjoy.com",
+    "description": "Lami ingon si mama."
+  },
+  {
+    "name": "Sachi",
+    "address": "SM seaside, Cebu City",
+    "cuisine": "Japanese",
+    "website": "https://sachi.com",
+    "description": "Yes ofcourse, lami but mahal."
+  }
+]
