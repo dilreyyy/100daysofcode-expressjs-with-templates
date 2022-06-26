@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const uuid = require('uuid');
+const { render } = require('ejs');
 
 const app = express();
 
@@ -86,4 +87,8 @@ app.use((req, res)=>{
     res.render('404');
 });
 
+// handle all server side errors
+app.use((error, req, res, next) => {
+    res.render('500');
+})
 app.listen(3000);
