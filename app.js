@@ -1,32 +1,32 @@
 //run this commands to use this project
 //npm install express
 //npm install --save-dev nodemon 
+//npm install ejs
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
 
 const app = express();
 
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
 app.use(express.urlencoded({extended: false}));
 
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-    const htmlfilePath = path.join(__dirname, 'views', 'index.html');
-    res.sendFile(htmlfilePath);
+    res.render('index');
 });
 
 app.get('/about', function(req, res){
-    const htmlfilePath = path.join(__dirname, 'views', 'about.html');
-    res.sendFile(htmlfilePath);
+    res.render('about');
 });
 app.get('/confirm', function(req, res){
-    const htmlfilePath = path.join(__dirname, 'views', 'confirm.html');
-    res.sendFile(htmlfilePath);
+    res.render('confirm');
 });
 app.get('/recommend', function(req, res){
-    const htmlfilePath = path.join(__dirname, 'views', 'recommend.html');
-    res.sendFile(htmlfilePath);
+    res.render('recommend');
 });
 
 app.post('/recommend', function(req, res){
@@ -41,8 +41,7 @@ app.post('/recommend', function(req, res){
     res.redirect('/confirm');
 });
 app.get('/restaurants', function(req, res){
-    const htmlfilePath = path.join(__dirname, 'views', 'restaurants.html');
-    res.sendFile(htmlfilePath);
+    res.render('restaurants');
 });
 
 app.listen(3000);

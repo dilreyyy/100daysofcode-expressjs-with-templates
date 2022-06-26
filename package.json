@@ -9,6 +9,7 @@
   "author": "Rodel Rey Gamosa",
   "license": "ISC",
   "dependencies": {
+    "ejs": "^3.1.8",
     "express": "^4.18.1"
   },
   "devDependencies": {
