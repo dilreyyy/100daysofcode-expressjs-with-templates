@@ -49,4 +49,9 @@ app.get('/restaurants', function(req, res){
     res.render('restaurants', { numOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants});
 });
 
+app.get('/restaurants/:rid', function(req, res){
+    const restoID = req.params.rid;
+    res.render('restaurant-details', {rid: restoID });
+});
+
 app.listen(3000);
