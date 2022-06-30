@@ -29,10 +29,28 @@ router.post('/recommend', function(req, res){
 
 //restaurant route, display dyanmic data from json file
 router.get('/restaurants', function(req, res){
+    let order = req.query.order; 
+    let nextOrder = 'desc';
+
+    if(order !== 'asc' && order !== 'desc'){ //catch any other values
+        order = 'asc';
+    }
+
+    if(order === 'desc'){ //for next order
+        nextOrder = 'asc';
+    }
 
     const storedRestaurants = restoData.storedRestaurants();
 
-    res.render('restaurants', { numOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants});
+    storedRestaurants.sort(function(resA, resB){
+        if(order === 'asc' && resA.name > resB.name || order === 'desc' && resB.name > resA.name){
+            return 1;
+        }
+
+        return -1;
+    });
+
+    res.render('restaurants', { numOfRestaurants: storedRestaurants.length, restaurants: storedRestaurants, nextOrder: nextOrder});
 });
 
 //display resto details with using dynamic id
